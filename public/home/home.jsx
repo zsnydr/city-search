@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import request from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { NavLink } from 'react-router-dom';
 import HomeCityList from './homeCityList';
+import updateActiveCity from '../actions/activeCity';
 
 class Home extends Component {
   constructor(props) {
@@ -18,12 +22,10 @@ class Home extends Component {
     this.setState({ term: e.target.value });
   }
 
-  searchSubmit(e) {
-    e.preventDefault();
+  searchSubmit() {
     request.get(`/api/search/${this.state.term}`)
-    .then(() => {
-      // TODO: update Redux
-      // TODO: redirect to search page
+    .then(({ data }) => {
+      this.props.updateActiveCity(data);
     })
     .catch((err) => {
       console.log(`Error submitting search: ${err}`);
@@ -36,12 +38,7 @@ class Home extends Component {
         <div className="home-main">
           <div className="home-main-search">
             <input type="text" onChange={this.onChange} />
-            <input
-              type="submit"
-              value="Search"
-              onClick={this.searchSubmit}
-              className="home-main-search-submit"
-            />
+            <NavLink onClick={this.searchSubmit} to="/search">Search</NavLink>
           </div>
         </div>
         <div className="home-list">
@@ -52,4 +49,8 @@ class Home extends Component {
   }
 }
 
-export default Home;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ updateActiveCity }, dispatch);
+}
+
+export default connect(null, mapDispatchToProps)(Home);

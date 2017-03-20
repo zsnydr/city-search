@@ -1,7 +1,29 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const Search = () => (
-  <div>ABOUT</div>
-);
+class Search extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default Search;
+  render() {
+    if (!this.props.activeCity) {
+      return <div>No active City</div>;
+    }
+
+    return (
+      <div>
+        <div>{this.props.activeCity.city}</div>
+        <div>{this.props.activeCity.population}</div>
+      </div>
+    );
+  }
+}
+
+function mapStateToProps({ activeCity }) {
+  return {
+    activeCity
+  };
+}
+
+export default connect(mapStateToProps, null)(Search);
