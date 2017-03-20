@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Nav from './nav';
 import Home from '../home/home';
-import About from '../about/about';
+import Search from '../search/search';
 
 const Routes = () => (
   <Router>
@@ -10,7 +10,7 @@ const Routes = () => (
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
+        <Route path="/search" component={Search} />
       </Switch>
     </div>
   </Router>

@@ -1,0 +1,52 @@
+.home-main {
+  margin: 1% 2%;
+  background-image: url('http://cdn.pcwallart.com/images/seattle-streets-at-night-wallpaper-2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-list {
+  border: 1px solid black;
+  margin: 1% 2%;
+
+  .home-city-list {
+    display: flex;
+    justify-content: space-around;
+    
+    .home-city-list-item {
+      width: 10%;
+      text-align: center;
+      height: 50px;
+      color: white;
+    }
+
+    .san-francisco {
+      background-image: url('https://stacyfischer.files.wordpress.com/2014/11/painted-ladies1.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .new-york {
+      background-image: url('http://www.nationalgeographic.com/new-york-city-skyline-tallest-midtown-manhattan/assets/img/articleImg/01nyskyline1536.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .chicago {
+      background-image: url('https://1366x768wallpaper.com/no-watermarks/originals/2015/10/01/chicago-night-city.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .los-angeles {
+      background-image: url('https://static1.squarespace.com/static/51c34053e4b07376a4a23cbf/53d69db0e4b0046e8e324d99/53eea6cce4b06ae6d5af1526/1460067410740/los-angeles-at-night-palm-trees.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 const activeStyle = { color: 'green' };
 
 const Nav = () => (
-  <nav>
+  <nav className="nav">
     <NavLink exact activeStyle={activeStyle} to="/">Home</NavLink>
-    <NavLink activeStyle={activeStyle} to="/about">About</NavLink>
+    <NavLink activeStyle={activeStyle} to="/search">Search</NavLink>
   </nav>
 );
 
